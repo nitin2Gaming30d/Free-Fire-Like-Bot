@@ -87,7 +87,7 @@ def call_api(region, uid):
 def get_user_limit(user_id):
     if user_id == OWNER_ID:
         return 999999999  # Unlimited for owner
-    return 1  # 1 request per day for regular users
+    return 20  # 1 request per day for regular users
 
 
 # Start background thread
@@ -222,8 +222,9 @@ def process_like(message, region, uid):
         usage["last_used"] = now_utc
         like_tracker[user_id] = usage
         
-        response_text = f"""✅ *Request Processed Successfully*\n\n👤 *Name:* `{player_name}`\n🆔 *UID:* `{player_uid}`\n🌍 *Region:* `{region}`\n🤡 *Likes Before:* `{likes_before}`\n📈 *Likes Added:* `{likes_given}`\n🗿 *Total Likes Now:* `{total_like}`\n🔐 *Remaining Requests:* `{max_limit - usage['used']}`\n👑 *Credit:* @AutoNitin"""
-
+        response_text = f"""*╔════════◇◆◇════════╗  
+         🎉 LIKE SUCCESSFULLY 👍 
+        ╚════════◇◆◇════════╝*\n\n👤 *Name:* {player_name}\n🆔 *UID:* {player_uid}\n🌍 *Region:* {region}\n*━━━━━━━━━━━━━━━━━━━━━\n🤡 *Likes Before:* {likes_before}\n📈 *Likes Added:* {likes_given}\n🗿 *Total Likes Now:* {total_like}\n*━━━━━━━━━━━━━━━━━━━━━\n🔐 *Remaining Requests:* {max_limit - usage['used']}\n👑 *Credit:* @AutoNitin"""
         markup = InlineKeyboardMarkup()
 
         bot.edit_message_text(
