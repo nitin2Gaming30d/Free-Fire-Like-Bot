@@ -10,8 +10,8 @@ import logging
 import sys
 # ╔══════════════════════════════════════════════════════════════════╗
 # ║  CREATOR: TARIKUL ISLAM
-# ║  TELEGRAN: https://t.me/paglu_dev
-# ║  PERSONAL TELEGRAM: https://t.me/itzpaglu
+# ║  TELEGRAN: https://t.me/AutoNitinff
+# ║  PERSONAL TELEGRAM: https://t.me/autonitin1
 # ╚══════════════════════════════════════════════════════════════════╝
 
 # Configure logging
@@ -28,10 +28,10 @@ if not BOT_TOKEN:
     logger.error("❌ BOT_TOKEN not found! Please set your bot token in environment variables.")
     sys.exit(1)
 
-REQUIRED_CHANNELS = ["@your channel username"]
-GROUP_JOIN_LINK = "https://t.me/your_group_link"
-OWNER_ID = your tg user id (integer)    #Example: 6282811167
-OWNER_USERNAME = "@your username"
+REQUIRED_CHANNELS = ["https://t.me/AutoNitinff"]
+GROUP_JOIN_LINK = "https://t.me/autonitin1"
+OWNER_ID = 6370963374
+OWNER_USERNAME = "@AutoNitin"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 like_tracker = {}   # in-memory cache
@@ -222,7 +222,7 @@ def process_like(message, region, uid):
         usage["last_used"] = now_utc
         like_tracker[user_id] = usage
         
-        response_text = f"""✅ *Request Processed Successfully*\n\n👤 *Name:* `{player_name}`\n🆔 *UID:* `{player_uid}`\n🌍 *Region:* `{region}`\n🤡 *Likes Before:* `{likes_before}`\n📈 *Likes Added:* `{likes_given}`\n🗿 *Total Likes Now:* `{total_like}`\n🔐 *Remaining Requests:* `{max_limit - usage['used']}`\n👑 *Credit:* @itzpaglu"""
+        response_text = f"""✅ *Request Processed Successfully*\n\n👤 *Name:* `{player_name}`\n🆔 *UID:* `{player_uid}`\n🌍 *Region:* `{region}`\n🤡 *Likes Before:* `{likes_before}`\n📈 *Likes Added:* `{likes_given}`\n🗿 *Total Likes Now:* `{total_like}`\n🔐 *Remaining Requests:* `{max_limit - usage['used']}`\n👑 *Credit:* @AutoNitin"""
 
         markup = InlineKeyboardMarkup()
 
