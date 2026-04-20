@@ -222,7 +222,9 @@ def process_like(message, region, uid):
         usage["last_used"] = now_utc
         like_tracker[user_id] = usage
         
-        response_text = f"""*🎉 LIKE SUCCESSFULLY 👍*\n\n👤 *Name:* {player_name}\n🆔 *UID:* {player_uid}\n🌍 *Region:* {region}\n*━━━━━━━━━━━━━━━━━━━━━\n🤡 *Likes Before:* {likes_before}\n📈 *Likes Added:* {likes_given}\n🗿 *Total Likes Now:* {total_like}\n*━━━━━━━━━━━━━━━━━━━━━\n🔐 *Remaining Requests:* {max_limit - usage['used']}\n👑 *Credit:* @AutoNitin"""
+        response_text = f"""*╔════════◇◆◇════════╗  
+    🎉 LIKE SUCCESSFULLY 👍  
+╚════════◇◆◇════════╝*\n\n🔶 *Name:* {player_name}\n🔶 *UID:* {player_uid}\n🔶 *Region:* {region}\n*━━━━━━━━━━━━━━━━━━━━━ \n🔶 *Likes Before:* {likes_before}\n🔶 *Likes Added:* {likes_given}\n🔶 *Total Likes Now:* {total_like}\n*━━━━━━━━━━━━━━━━━━━━━ \n♻️*Remaining Requests:* {max_limit - usage['used']}\n👑 *Bot Owner:* @AutoNitin"""
         markup = InlineKeyboardMarkup()
 
         bot.edit_message_text(
