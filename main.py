@@ -72,9 +72,9 @@ def is_user_in_channel(user_id):
 
 
 def call_api(region, uid):
-    url = f"https://bdbdh-blond.vercel.app/like?uid={uid}&server_name={region}"
+    url = f"https://free-fire-like-api-nitin.vercel.app/like?uid={uid}&server_name={region}"
     try:
-        response = requests.get(url, timeout=20)
+        response = requests.get(url, timeout=90)
         if response.status_code != 200:
             return {"⚠️Invalid": " Maximum likes reached for today. Please try again tomorrow."}
         return response.json()
@@ -87,7 +87,7 @@ def call_api(region, uid):
 def get_user_limit(user_id):
     if user_id == OWNER_ID:
         return 999999999  # Unlimited for owner
-    return 20  # 1 request per day for regular users
+    return 50  # 1 request per day for regular users
 
 
 # Start background thread
